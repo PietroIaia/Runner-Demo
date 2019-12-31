@@ -11,6 +11,7 @@ public class Death : MonoBehaviour
     private float timer;
     public GameObject MainCamera;
     private CameraShake shake;
+    public GameObject GameOver_Container;
 
     void Start()
     {
@@ -24,13 +25,6 @@ public class Death : MonoBehaviour
         if(dead == true)
         {
             Time.timeScale = 0;
-            timer += Time.unscaledDeltaTime;      // unscaledDeltaTime: DeltaTime no afectado por timeScale.
-            time_to_respawn = timer % 60;
-            if(time_to_respawn >= 1)
-            {
-                SceneManager.LoadScene( SceneManager.GetActiveScene().name );
-                Time.timeScale = 1;
-            }
         }
     }
 
