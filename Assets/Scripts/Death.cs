@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;              // This was manually added
 public class Death : MonoBehaviour
 {
     // boolean that tells if the character died
-    private bool dead = false;
+    public bool dead = false;
     private float time_to_respawn;
     private float timer;
     public GameObject MainCamera;

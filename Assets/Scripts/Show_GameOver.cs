@@ -6,14 +6,19 @@ public class Show_GameOver : MonoBehaviour
 {
     public GameObject GameOver_Screen;
     private CanvasGroup uiElement;
+    public GameObject go;
+    private Death death;
 
     void Start()
     {
+        go = GameObject.Find("Character");
+        death = go.GetComponent<Death>();
+
         uiElement = GameOver_Screen.GetComponent<CanvasGroup>();
     }
     void Update()
     {
-        if(Time.timeScale == 0)
+        if(death.dead)
         {
             StartCoroutine(FadeCanvasGroup(uiElement, uiElement.alpha, 1));
             uiElement.interactable = true;
