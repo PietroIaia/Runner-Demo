@@ -28,7 +28,7 @@ public class enemy_movement : MonoBehaviour
         rb.velocity = new Vector2(speed, rb.velocity.y);
 
         // If the player jumps, the enemy does too
-        if(Input.GetKeyDown("space"))
+        if(Input.GetKeyDown("space") && grounded)
         {
             rb.AddForce(new Vector2(0f, jump));
             grounded = false;

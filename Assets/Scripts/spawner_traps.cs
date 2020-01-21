@@ -17,8 +17,6 @@ public class spawner_traps : MonoBehaviour
         oldi = -1;
     }
 
-    // Update is called once per frame
-
     private void OnTriggerExit2D(Collider2D col)
     {
         if (col.name == "disable")
